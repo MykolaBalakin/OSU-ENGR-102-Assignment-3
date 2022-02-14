@@ -48,16 +48,20 @@ def greatest(data_set):
 # i.e. +, -, *, **, /					#
 #########################################
 
-def z_score():
-	"""
-	"""
-	return
+def z_score(value, data_set):
+	mean_value = mean(data_set)
+	return (value - mean_value) / stdev(data_set, mean_value)
 
 
 # Call z_score() with necessary arguments to get the z-score for: 
 # 1. the mean of the population list,
-mean_z_score = z_score()
+mean_z_score = z_score(mean(population), population)
+print(f'mean_z_score = {mean_z_score}')
+
 # 2. the greatest value in the population list,
-greatest_z_score = z_score()
+greatest_z_score = z_score(greatest(population), population)
+print(f'greatest_z_score = {greatest_z_score}')
+
 # 3. the least value in the population list.
-least_z_score = z_score()
+least_z_score = z_score(least(population), population)
+print(f'least_z_score = {least_z_score}')
