@@ -59,11 +59,11 @@ def count_tests(test_results):
 
 #########################################
 #Complete the following two functions.	#
-#You may call the functions above,		#
+#You may call the functions above,	#
 # but do not define any new functions.	#
-#You will need to add parameters.		#
+#You will need to add parameters.	#
 #You may also use arithmetic operators, #
-# i.e. +, -, *, **, /					#
+# i.e. +, -, *, **, /			#
 #########################################
 def calc_pos_pred_value():
 	"""
