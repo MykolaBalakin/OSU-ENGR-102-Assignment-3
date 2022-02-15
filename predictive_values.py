@@ -3,6 +3,7 @@
 #Data set: 50 tuples of (bool, bool) representing (positive, accurate),
 # i.e. (True, True) is a true positive, (False, True) is a true negative,
 # (True, False) is a false positive, and (False, False) is a false negative.
+
 diagnoses = [(True, True), (True, True), (True, False), (True, False), 
 			(False, True), (True, False), (False, True), (False, False), 
 			(True, True), (False, True), (False, False), (False, False), 
@@ -65,18 +66,20 @@ def count_tests(test_results):
 #You may also use arithmetic operators, #
 # i.e. +, -, *, **, /			#
 #########################################
-def calc_pos_pred_value():
+def calc_pos_pred_value(count_accurate, count_inaccurate, count_positives, count_tests):
 	"""
 	"""
-	return 
+	return 100*((count_accurate + count_inaccurate)/count_tests) / (count_positives / count_tests)
 
-def calc_neg_pred_value():
+def calc_neg_pred_value(count_accurate, count_inaccurate, count_negatives, count_tests):
 	"""
 	"""
-	return
+	return 100*((count_accurate + count_inaccurate)/count_tests) / (count_negatives / count_tests)
 
 # Call calc_pos_pred_value() and calc_neg_pred_value() with the necessary arguments.
 # The necessary arguments should be values returned from other functions, 
 #   based on the tuple(test cases) of diagnoses.
-positive_predictive_value = calc_pos_pred_value()
-negative_predictive_value = calc_neg_pred_value()
+positive_predictive_value = calc_pos_pred_value(count_accurate(True, diagnoses), count_inaccurate(True, diagnoses), count_positives(diagnoses), count_tests(diagnoses))
+negative_predictive_value = calc_neg_pred_value(count_accurate(False, diagnoses), count_inaccurate(False, diagnoses), count_negatives(diagnoses), count_tests(diagnoses))
+print(positive_predictive_value)
+print(negative_predictive_value)
