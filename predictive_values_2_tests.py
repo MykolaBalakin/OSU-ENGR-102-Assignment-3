@@ -7,16 +7,16 @@ class Tests(unittest.TestCase):
     data_set_1 = [(True, True), (True, False), (False, True), (False, True), (False, False)]
     data_set_2 = [(True, True), (True, False), (True, False), (False, True), (False, True), (False, True), (False, False)]
 
-    def test_pos_pred_value(self):
+    def test_count_accurate(self):
         self.assertAlmostEqual(1, count_accurate(True, self.data_set_1))
 
-    def test_pos_pred_value(self):
+    def test_count_inaccurate(self):
         self.assertAlmostEqual(1, count_inaccurate(True, self.data_set_1))
 
-    def test_pos_pred_value(self):
+    def test_count_positives(self):
         self.assertAlmostEqual(2, count_positives(self.data_set_1))
 
-    def test_pos_pred_value(self):
+    def test_count_tests(self):
         self.assertAlmostEqual(5, count_tests(self.data_set_1))
 
     def test_positive_data_set_1(self):

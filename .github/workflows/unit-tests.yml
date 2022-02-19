@@ -21,3 +21,4 @@ jobs:
       run: |
         python z_score_tests.py
         python predictive_values_tests.py
+        python predictive_values_tests_2.py
